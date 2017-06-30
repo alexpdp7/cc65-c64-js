@@ -2,3 +2,7 @@
 
 docker build -t cc65-c64-js .
 docker run --rm -v $(pwd)/$1:/src -w /src cc65-c64-js cl65 -O main.c
+mkdir -p $1/build/js
+cp vice.js/js/x64.js $1/build/js/x64.js
+sed s,b64goeshere,$(base64 -w 0 $1/main), assets/index.html >$1/build/index.html
+cp assets/index.html $1/build
