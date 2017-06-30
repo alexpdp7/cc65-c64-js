@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -ue
+
 docker build -t cc65-c64-js .
 docker run --rm -v $(pwd)/$1:/src -w /src cc65-c64-js cl65 -O main.c
 mkdir -p $1/build/js
