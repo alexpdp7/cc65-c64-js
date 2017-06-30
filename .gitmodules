@@ -1,0 +1,3 @@
+[submodule "vice.js"]
+	path = vice.js
+	url = https://github.com/rjanicek/vice.js.git
